@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>DP Aluminium - Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Top quality Aluminium doors, windows, gates, and custom designs.">
+  <link rel="stylesheet" href="styling.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" type="image/jpg" href="logo.jpg">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      background: linear-gradient(to right, #d9f9ff, #ffffff);
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .logo {
+      height: 65px;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0px 0px 10px white);
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 1.1em;
+      color: white;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+      transform: scale(1.35);
+    }
+
+    .title-section {
+      background-image: url('officewindow2.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .site-title {
+      font-size: 2.8em;
+      font-family: 'Georgia', serif;
+      color: navy;
+      text-shadow: 5px 5px 5px grey;
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .site-title:hover {
+      transform: scale(1.05);
+      transition:all 0.3s ease;
+      color: navy;
+    }
+
+    .footer {
+      background-color: black;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-family: 'Georgia', serif;
+      margin-top: 40px;
+    }
+
+    .footer .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .footer .social-icons i:hover {
+      filter: drop-shadow(0 0 5px white);
+      transform: scale(1.5);
+    }
+
+    .footer .designed-by {
+      font-weight: bold;
+      color: skyblue;
+      cursor: pointer;
+    }
+
+    .footer .designed-by:hover {
+      text-shadow: 0 0 5px skyblue;
+      color: white;
+    }
+
+    .services {
+      background: linear-gradient(to right, #d9f9ff, #ffffff);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services-title {
+      background-color: skyblue;
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 20px;
+      margin-bottom: 50px;
+    }
+
+    .services-title h2 {
+      font-size: 2.5rem;
+      color: black;
+      margin: 0;
+      text-decoration:underline;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .service-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+    }
+
+    .service-card.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .service-image {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 5px solid grey;
+      transition: 0.3s ease;
+    }
+
+    .service-image:hover {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      transform: scale(1.03);
+    }
+
+    .service-description {
+      width: 400px;
+      background-color: #e0f7fa;
+      border: 3px solid navy;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 10px grey
+    }
+
+    .service-description h3 {
+      font-size: 1.8rem;
+      color: #007c91;
+      margin-bottom: 10px;
+    }
+    .glow:hover{
+      filter: drop-shadow(5px 5px 5px skynlue);
+      transform: scale(1.03);
+    }
+
+    .service-description p {
+      font-size: 1.5rem;
+      color: #444;
+    }
+
+    .quote-button-container {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .quote-button {
+      padding: 15px 35px;
+      font-size: 1.3rem;
+      background-color: green;
+      color: white;
+      border: 3px solid green;
+      border-radius: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      animation: glow 2s infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
+    }
+
+    .quote-button:hover {
+      background-color: white;
+      color: green;
+      border-color: green;
+      transform: scale(1.1);
+      box-shadow: 0 0 25px green;
+    }
+
+    .quote-button i {
+      margin-left: 10px;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px green; }
+      50% { box-shadow: 0 0 20px green; }
+      100% { box-shadow: 0 0 10px green; }
+    }
+
+    @media (max-width: 768px) {
+      .service-card, .service-card.reverse {
+        flex-direction: column;
+      }
+
+      .service-image, .service-description {
+        width: 90%;
+      }
+
+      .service-description {
+        text-align: center;
+      }
+    }
+    html {
+      scroll-behavior: smooth;
+}
+.site-title:hover {
+  transform: scale(1.05);
+  color: navy;
+}
+a {
+  color:inherit;
+  text-decoration:none;
+}
+  </style>
+</head>
+
+<body id="top">
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="title-section">
+    <h1 class="site-title">DP ALUMINIUM SERVICE (PTY) LTD</h1>
+  </section>
+
+  <section class="services">
+    <div class="services-title" data-aos="fade-down" data-aos-duration="1000">
+      <h2>Our Services</h2>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-aos="fade-right">
+        <img src="bedroomdoor.jpg" alt="Bedroom Door" class="service-image">
+        <div class="service-description">
+          <h3 class="glow">Aluminium Bedroom Doors</h3>
+          <p>Secure and stylish aluminium doors for modern bedrooms. Designed for comfort, privacy, and aesthetics.</p>
+        </div>
+      </div>
+
+      <div class="service-card reverse" data-aos="fade-left">
+        <img src="bigwindow2.jpg" alt="Large Window" class="service-image">
+        <div class="service-description">
+          <h3 class="glow">Aluminium Panoramic Windows</h3>
+          <p>Bring in natural light with wide, strong aluminium frames. Perfect for lounges and living spaces.</p>
+        </div>
+      </div>
+
+      <!-- Back to Top Chevron Arrow -->
+      <a href="#" class="back-to-top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+
+      <div class="service-card" data-aos="fade-right">
+        <img src="slidingdoor3.jpg" alt="Double Window" class="service-image">
+        <div class="service-description">
+          <h3 class="glow">Aluminium Sliding Doors</h3>
+          <p>Smooth-sliding window solutions that offer ventilation and safety without compromising elegance.</p>
+        </div>
+      </div>
+
+      <div class="service-card reverse" data-aos="fade-left">
+        <img src="kitchendoor4.jpg" alt="Kitchen Door" class="service-image">
+        <div class="service-description">
+          <h3 class="glow">Aluminium Kitchen Doors</h3>
+          <p>Durable, grease-resistant aluminium doors ideal for kitchens. Easy to clean and long-lasting beauty.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-button-container" data-aos="zoom-in">
+      <a href="https://wa.me/27728762011" target="_blank">
+        <button class="quote-button">
+          Get your quote today <i class="fab fa-whatsapp"></i>
+        </button>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://wa.me/27728762011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@dp_aluminum23" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100063883607635" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p>&copy; 2025 DP ALUMINIUM SERVICE (PTY) LTD | All Rights Reserved.</p>
+    <p>Designed by <a href="https://wa.me/27694317707"><span class="designed-by">Inter-Cyber Innovations</span></a></p>
+  </footer>
+
+  <script>
+    const backToTopButton = document.querySelector(".back-to-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
+  </script>
+
+  <!-- Scripts moved here -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

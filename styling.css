@@ -1,0 +1,238 @@
+.homepage {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.homepage h1 {
+  font-size: 2.8em;
+  color: navy;
+  background-color: white;
+}
+
+.homepage h1:hover {
+  transform: scale(1.05);
+  color: navy;
+}
+.title-section {
+  background-image: url('officewindow2.jpg'); /* Replace with your image file */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 2.8em;
+  font-family: 'Georgia', serif;
+  color: navy;
+  text-shadow: 5px 5px 5px grey;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.site-title:hover {
+  transform: scale(1.05);
+  color: navy;
+  transition:all 0.3s ease;
+}
+
+.about-us {
+  text-align: center;
+  padding: 50px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-us h2 {
+  border-radius: 25px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  background-color: skyblue;
+}
+.about-us h2:hover {
+  text-shadow: grey;
+}
+
+.about-us p {
+  font-size: 1.4em;
+  line-height: 1.8;
+  font-family: 'Georgia', serif;
+  color: #333;
+  background-color: white;
+}
+.mission-vision-brief {
+  background: linear-gradient(to left, #d9f9ff, #ffffff);
+  padding: 60px 20px;
+  font-family: 'Georgia', serif;
+}
+
+.mv-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.mv-image img {
+  width: 500px;
+  height: auto;
+  border: 2px solid red;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.mv-image img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 5px red);
+}
+
+.mv-description {
+  max-width: 500px;
+  border-left: 2px solid black;
+  padding-left: 20px;
+}
+
+.mv-description h2 {
+  text-decoration: underline;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.mv-description p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  color: #000;
+}
+.catalog-card {
+  background-color: grey;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.catalog-card img {
+  width: 100%;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.catalog-card img:hover {
+  transform: scale(1.05);
+}
+
+.quote-button {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.why-choose-us {
+  text-align: center;
+  padding: 50px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5em;
+  text-decoration: underline;
+  background-color: skyblue;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.why-choose-us ul {
+  list-style-type: disc;
+  text-align: left;
+  display: inline-block;
+  font-size: 2.0em;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.slideshow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  padding: 20px;
+  max-width: 70%;
+  margin: 30px auto;
+  border-radius: 10px;
+  border: 5px solid skyblue;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 400px;
+  height: auto;
+  border: 5px solid black;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 15px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  transition: 0.3s;
+  user-select: none;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 24px;
+  background-color: skyblue;
+  color:black;
+  padding: 10px 12px;
+  border-radius: 50%;
+  text-align: center;
+  display: none;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: grey;
+}
