@@ -242,12 +242,138 @@
       color:inherit;
       text-decoration:none;
     }
+    <!-- Add this inside your <style> block, at the bottom: -->
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  nav ul li a {
+    font-size: 1em;
+    padding: 8px 0;
+  }
+
+  .title-section {
+    height: 180px;
+  }
+
+  .site-title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .contact-section {
+    padding: 30px 15px;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-details,
+  .follow-details {
+    font-size: 1.2em;
+    padding: 20px;
+  }
+
+  .map-section h2 {
+    font-size: 1.5em;
+    padding: 8px;
+  }
+
+  .map-container {
+    max-width: 90%;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer .social-icons {
+    gap: 15px;
+    font-size: 1.5em;
+  }
+
+  .footer p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  .site-title {
+    font-size: 1.6em;
+  }
+
+  .contact-details,
+  .follow-details {
+    font-size: 1.1em;
+  }
+
+  iframe {
+    height: 300px;
+  }
+
+  .footer .social-icons {
+    font-size: 1.3em;
+  }
+}
+/* Hamburger Menu Style */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+/* Show menu toggle on small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  nav ul.showing {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2em;
+    border-bottom: 1px solid white;
+  }
+}
   </style>
 </head>
 <body id="top">
   <header>
     <div class="logo-container">
       <img src="logo.jpg" alt="DP Aluminum Company Logo" class="logo">
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
     </div>
     <nav>
       <ul>
@@ -322,6 +448,23 @@
         backToTopButton.style.display = "none";
       }
     });
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('nav ul');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('showing');
+  });
+
+  // Existing back-to-top scroll code here
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
   </script>
 
 </body>
