@@ -360,38 +360,39 @@
     font-size: 1.3em;
   }
 }
-/* Hamburger Menu Style */
-.menu-toggle {
-  display: none;
-  font-size: 2em;
-  color: white;
-  cursor: pointer;
-}
-
-/* Show menu toggle on small screens */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
   }
 
   nav ul {
-    display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: black;
-    margin-top: 10px;
-    border-radius: 5px;
+    gap: 10px;
+    align-items: center;
+    padding: 0;
   }
 
-  nav ul.showing {
-    display: flex;
+  nav ul li {
+    width: 100%;
+    text-align: center;
   }
 
   nav ul li a {
-    padding: 10px;
-    text-align: left;
     font-size: 1.2em;
-    border-bottom: 1px solid white;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.6em;
+  }
+
+  nav ul li a {
+    font-size: 1em;
   }
 }
   </style>
@@ -400,9 +401,6 @@
   <header>
     <div class="logo-container">
       <img src="logo.jpg" alt="DP Aluminum Company Logo" class="logo">
-    </div>
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
     </div>
     <nav>
       <ul>
@@ -477,13 +475,6 @@
         backToTopButton.style.display = "none";
       }
     });
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.querySelector('nav ul');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('showing');
-  });
-
   // Existing back-to-top scroll code here
   const backToTopButton = document.querySelector(".back-to-top");
 
