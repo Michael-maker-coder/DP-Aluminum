@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Contact DP Aluminum Service (PTY) LTD for top-quality aluminium doors, windows, gates, and custom designs.">
   <title>DP Aluminum - Contact Us</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -82,12 +83,41 @@
     }
 
     .contact-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      padding: 50px 20px;
-      background: linear-gradient(to right, #d9f9ff, #ffffff);
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Adds space between the two boxes */
+  padding: 50px 20px;
+  background: linear-gradient(to right, #d9f9ff, #ffffff);
+}
+
+.contact-details,
+.follow-details {
+  width: 500px; /* Keeps the boxes at a good readable size */
+  max-width: 90%;
+  background-color: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  border: 2px solid navy;
+  transition: all 0.3s ease;
+}
+
+.contact-details:hover,
+.follow-details:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f0faff;
+}
+
+/* Makes sure spacing is good on mobile */
+@media (max-width: 768px) {
+  .contact-section {
+    gap: 30px; /* Keeps good space between stacked boxes */
+  }
+}
     .contact-details:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -272,7 +302,7 @@
 
   .contact-section {
     padding: 30px 15px;
-    grid-template-columns: 1fr;
+    align-items: center;
   }
 
   .contact-details,
