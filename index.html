@@ -165,7 +165,7 @@
     bottom: 30px;
     font-size: 2rem;
     color: black;
-    background: white;
+    background: skyblue;
     padding: 10px 15px;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -203,24 +203,72 @@
       padding-left: 10px;
     }
   }
+  /* Hamburger Icon */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav Default (Desktop) */
+#nav-menu {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  /* Show Hamburger on Mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav by default */
+  #nav-menu {
+    display: none;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 80px; /* adjust depending on your header height */
+    left: 0;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  #nav-menu ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  #nav-menu.active {
+    display: flex;
+  }
+}
 </style>
 </head>
 <body id="top">
   <header>
-    <!-- Left: Logo -->
-    <div class="logo-container">
-      <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
-    </div>
-    <!-- Right: Navigation -->
-    <nav>
-      <ul>
-        <li> <a href="index.html" class="active">Home</a></li>
-        <li> <a href="gallery.html">Gallery</a></li>
-        <li> <a href="services.html">Services</a></li>
-        <li> <a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Left: Logo -->
+  <div class="logo-container">
+    <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
+  </div>
+
+  <!-- Hamburger Menu Icon -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
   <section class="title-section">
     <section class="homepage">
     <h1 class="site-title">DP ALUMINIUM SERVICE (PTY) LTD</h1>
@@ -294,7 +342,13 @@
       backToTopButton.style.display = "none";
     }
   });
-</script>
+  // Toggle Menu Script
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
 
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
 </body>
 </html>
