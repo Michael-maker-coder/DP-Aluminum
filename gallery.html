@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
   <title>DP Aluminum - Gallery</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="description" content="Top-quality aluminium doors, windows, gates, and custom designs.">
-  <link rel="stylesheet" href="styling.css">
   <link rel="icon" type="image/jpg" href="logo.jpg">
   <link rel="preload" href="logo.jpg" as="image">
   <link rel="preload" href="officewindow2.jpg" as="image">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Georgia', serif;
       background: linear-gradient(to right, #d9f9ff, #ffffff);
-      margin: 0;
     }
 
     header {
@@ -25,9 +31,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 30px;
-      position: none;
-      top: 0;
-      z-index: 1000;
     }
 
     .logo {
@@ -39,6 +42,7 @@
     .logo:hover {
       transform: scale(1.05);
     }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -79,18 +83,16 @@
       background-color: white;
       padding: 10px;
       border-radius: 5px;
+      transition: all 0.3s ease;
     }
 
     .site-title:hover {
       transform: scale(1.05);
-      color: navy;
-      transition:all 0.3s ease;
     }
 
     .gallery-section {
       text-align: center;
       padding: 40px 20px;
-      background: linear-gradient(to right, #d9f9ff, #ffffff);
     }
 
     .gallery-section h2 {
@@ -98,9 +100,9 @@
       margin-bottom: 30px;
       background-color: skyblue;
       padding: 10px;
-      border-radius:10px;
-      text-decoration:underline;
-      display:inline-block;
+      border-radius: 10px;
+      text-decoration: underline;
+      display: inline-block;
     }
 
     .gallery-container {
@@ -137,19 +139,20 @@
       margin-top: 15px;
       padding: 8px 16px;
       font-size: 2em;
-      background-color:grey;
+      background-color: grey;
       color: white;
-      border: 2px black;
+      border: none;
       cursor: pointer;
-      transition: background-color 0.3s ease;
       text-decoration: none;
       border-radius: 5px;
+      transition: all 0.3s ease;
     }
 
     .quote-btn:hover {
-      background-color:white;
-      color:black;
+      background-color: white;
+      color: black;
     }
+
     form {
       max-width: 600px;
       margin: 0 auto 50px;
@@ -159,15 +162,15 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    form input,
-    form textarea {
+    form input, form textarea {
       width: 100%;
       padding: 10px;
       margin: 15px 0;
-      border: 5px solid #ccc;
+      border: 1px solid #ccc;
       border-radius: 5px;
       font-family: 'Georgia', serif;
     }
+
     form button {
       background-color: black;
       color: white;
@@ -175,277 +178,305 @@
       padding: 12px 20px;
       font-size: 1.5em;
       cursor: pointer;
-      transition: 0.3s ease;
       border-radius: 5px;
+      transition: 0.3s ease;
     }
 
     form button:hover {
       background-color: grey;
-      color:black;
+      color: black;
     }
+
     .form-head {
-      text-align:center;
+      text-align: center;
     }
+
     .footer {
-  background-color: black;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-  font-family: 'Georgia', serif;
-  margin-top: 40px;
-}
-<style>
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      background-color: black;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .footer .social-icons i {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .footer .social-icons i:hover {
+      transform: scale(1.5);
+      filter: drop-shadow(0 0 5px white);
+    }
+
+    .footer .designed-by {
+      font-weight: bold;
+      color: skyblue;
+      cursor: pointer;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .footer .designed-by:hover {
+      text-shadow: 0 0 5px skyblue;
+      color: white;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 24px;
+      background-color: skyblue;
+      color: black;
+      padding: 10px 12px;
+      border-radius: 50%;
+      display: none;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      background-color: grey;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      touch-action: manipulation;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .slideshow-wrapper {
+  max-width: 900px;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease forwards;
-}
-.footer .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 1.8em;
-  margin-bottom: 15px;
+.slideshow-container {
+  position: relative;
 }
 
-.footer .social-icons i {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.footer .social-icons i:hover {
-  filter: drop-shadow(0 0 5px white);
-  transform: scale(1.5);
-}
-
-.footer p {
-  margin: 5px 0;
-}
-
-.footer .designed-by {
-  font-weight: bold;
-  color: skyblue;
-  cursor: pointer;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.footer .designed-by:hover {
-  text-shadow: 0 0 5px skyblue;
-  color: white;
-}
-html {
-  scroll-behavior: smooth;
-}
-form input:focus,
-form textarea:focus,
-form select:focus {
-  font-size: 18px; /* Increase font size when active */
-  transition: font-size 0.2s ease-in-out;
-}
-a{
-  color:inherit;
-  text-decoration:none;
-}
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  font-size: 24px;
-  background-color: skyblue;
-  color:black;
-  padding: 10px 12px;
-  border-radius: 50%;
-  text-align: center;
+.slide {
   display: none;
-  z-index: 999;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.back-to-top:hover {
-  background-color: grey;
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
 }
-.slideshow-container img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
   </style>
 </head>
+
 <body id="top">
+
   <header>
-    <div class="logo-container">
-      <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
-    </div>
+      <div class="logo-container">
+        <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
+      </div>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="title-section">
-    <h1 class="site-title">DP ALUMINIUM SERVICE (PTY) LTD</h1>
-  </section>
+    <section class="title-section">
+      <h1 class="site-title">DP ALUMINIUM SERVICE (PTY) LTD</h1>
+    </section>
 
-  <section class="gallery-section">
-    <h2 data-aos="fade-up">Our Catalogue</h2>
-    <div class="gallery-container">
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="officewindow.jpg" alt="Office Window" data-aos="flip-right">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+    <section class="gallery-section">
+      <h2 data-aos="fade-up">Our Catalogue</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="officewindow.jpg" alt="Office Window" data-aos="flip-right">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="slidingdoor.jpg" alt="Sliding Door" data-aos="flip-left">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="foldingdoor.jpg" alt="Folding Door"  data-aos="flip-right">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="kitchendoor.jpg" alt="Kitchen Door"  data-aos="flip-left">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="bigwindow4.jpg" alt="Big Window 4"  data-aos="flip-right">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="bigwindow3.jpg" alt="Big Window 3"  data-aos="flip-left">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="bigwindow5.jpg" alt="Big Window 5"  data-aos="flip-right">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="catalog-card">
+          <img src="officewindow2.jpg" alt="Office Window 2"  data-aos="flip-left">
+          <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
+          </div>
+        </div>
+    </section>
+    <section class="form-head"  data-aos="zoom-in">
+      <form id="contactForm" action="https://formsubmit.co/khozam065@gmail.com" method="POST" target="_blank">
+        <h2>Need a custom design?</h2>
+        <h2>Leave a message &mdash; we'll get back to you.</h2>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" ame="contact" placeholder="Your Email/Contact Number" required>
+        <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- Back to Top Chevron Arrow -->
+    <a href="#" class="back-to-top" title="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <section>
+      <div class="slideshow-wrapper" data-aos="zoom-in">
+        <div class="slideshow-container">
+          <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+
+          <img class="slide" src="slidingdoor4.jpg" alt="Sliding Door 4">
+          <img class="slide" src="slidingdoor2.jpg" alt="Sliding Door 2">
+          <img class="slide" src="after.jpg" alt="After Work">
+          <img class="slide" src="outdoorshelter.jpg" alt="Outdoor Shelter">
+          <img class="slide" src="foldingdoor2.jpg" alt="Folding Door">
+          <img class="slide" src="foldingdoor3.jpg" alt="Folding Door 3">
+          <img class="slide" src="kitchendoor3.jpg" alt="Kitchen Door 3">
+          <img class="slide" src="kitchendoor2.jpg" alt="Kitchen Door 3">
+          <img class="slide" src="gate.jpg" alt="Gate">
+          <img class="slide" src="bigdoor.jpg" alt="Big Door">
+          <img class="slide" src="bigwindow.jpg" alt="Big Window">
+
+          <span class="next" onclick="plusSlides(1)">&#10095;</span>
         </div>
       </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="slidingdoor.jpg" alt="Sliding Door" data-aos="flip-left">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="foldingdoor.jpg" alt="Folding Door"  data-aos="flip-right">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="kitchendoor.jpg" alt="Kitchen Door"  data-aos="flip-left">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="bigwindow4.jpg" alt="Big Window 4"  data-aos="flip-right">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="bigwindow3.jpg" alt="Big Window 3"  data-aos="flip-left">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="bigwindow5.jpg" alt="Big Window 5"  data-aos="flip-right">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="catalog-card">
-        <img src="officewindow2.jpg" alt="Office Window 2"  data-aos="flip-left">
-        <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
-        </div>
-      </div>
-  </section>
-  <section class="form-head"  data-aos="zoom-in">
-    <form id="contactForm" action="https://formsubmit.co/khozam065@gmail.com" method="POST" target="_blank">
-      <h2>Need a custom design?</h2>
-      <h2>Leave a message &mdash; we'll get back to you.</h2>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="text" ame="contact" placeholder="Your Email/Contact Number" required>
-      <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+    </section>
 
-  <!-- Back to Top Chevron Arrow -->
-  <a href="#" class="back-to-top" title="Back to top">
-    <i class="fas fa-chevron-up"></i>
-  </a>
+    <script>
+      const backToTopButton = document.querySelector(".back-to-top");
 
-  <section>
-    <div class="slideshow-wrapper" data-aos="zoom-in">
-      <div class="slideshow-container">
-        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      });
+    </script>
 
-        <img class="slide" src="slidingdoor4.jpg" alt="Sliding Door 4">
-        <img class="slide" src="slidingdoor2.jpg" alt="Sliding Door 2">
-        <img class="slide" src="after.jpg" alt="After Work">
-        <img class="slide" src="outdoorshelter.jpg" alt="Outdoor Shelter">
-        <img class="slide" src="foldingdoor2.jpg" alt="Folding Door">
-        <img class="slide" src="foldingdoor3.jpg" alt="Folding Door 3">
-        <img class="slide" src="kitchendoor3.jpg" alt="Kitchen Door 3">
-        <img class="slide" src="kitchendoor2.jpg" alt="Kitchen Door 3">
-        <img class="slide" src="gate.jpg" alt="Gate">
-        <img class="slide" src="bigdoor.jpg" alt="Big Door">
-        <img class="slide" src="bigwindow.jpg" alt="Big Window">
+    <script>
 
-        <span class="next" onclick="plusSlides(1)">&#10095;</span>
-      </div>
-    </div>
-  </section>
+    let slideIndex = 1;
 
-  <script>
-    const backToTopButton = document.querySelector(".back-to-top");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    });
-  </script>
-
-  <script>
-    let slideIndex = 0;
-    let slides;
-
-    function showSlides() {
-      slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
-      slides[slideIndex - 1].style.display = "block";
-    }
+    showSlides(slideIndex);
 
     function plusSlides(n) {
-      slideIndex += n - 1;
-      if (slideIndex < 0) slideIndex = slides.length - 1;
-      showSlides();
+      showSlides(slideIndex += n);
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      showSlides();
-      setInterval(showSlides, 5000);
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+
+
+    // Automatic Slideshow
+  setInterval(function() {
+    plusSlides(1);
+  }, 5000); // Change image every 5 seconds
+</script>
+
+    <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://wa.me/27728762011"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@dp_aluminum23" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100063883607635" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p>&copy; 2025 DP ALUMINIUM SERVICE (PTY) LTD | All Rights Reserved.</p>
+      <p>Designed by <a href="https://wa.me/27694317707"><span class="designed-by">Inter-Cyber Innovations</span></p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 3000, // animation duration
     });
   </script>
 
-  <!-- Footer Section -->
-<footer class="footer">
-  <div class="footer-content">
-    <div class="social-icons">
-      <a href="https://wa.me/27728762011"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@dp_aluminum23" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=100063883607635" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-    <p>&copy; 2025 DP ALUMINIUM SERVICE (PTY) LTD | All Rights Reserved.</p>
-    <p>Designed by <a href="https://wa.me/27694317707"><span class="designed-by">Inter-Cyber Innovations</span></p>
-  </div>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 3000, // animation duration
-  });
-</script>
 </body>
 </html>
