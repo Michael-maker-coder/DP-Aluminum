@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DP Aluminum - Gallery</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="description" content="Top-quality aluminium doors, windows, gates, and custom designs.">
@@ -9,6 +10,7 @@
   <link rel="icon" type="image/jpg" href="logo.jpg">
   <link rel="preload" href="logo.jpg" as="image">
   <link rel="preload" href="officewindow2.jpg" as="image">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -192,7 +194,21 @@
   font-family: 'Georgia', serif;
   margin-top: 40px;
 }
+<style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
 .footer .social-icons {
   display: flex;
   justify-content: center;
@@ -285,58 +301,58 @@ a{
   </section>
 
   <section class="gallery-section">
-    <h2>Our Catalogue</h2>
+    <h2 data-aos="fade-up">Our Catalogue</h2>
     <div class="gallery-container">
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="officewindow.jpg" alt="Office Window">
+        <img src="officewindow.jpg" alt="Office Window" data-aos="flip-right">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="slidingdoor.jpg" alt="Sliding Door">
+        <img src="slidingdoor.jpg" alt="Sliding Door" data-aos="flip-left">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="foldingdoor.jpg" alt="Folding Door">
+        <img src="foldingdoor.jpg" alt="Folding Door"  data-aos="flip-right">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="kitchendoor.jpg" alt="Kitchen Door">
+        <img src="kitchendoor.jpg" alt="Kitchen Door"  data-aos="flip-left">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="bigwindow4.jpg" alt="Big Window 4">
+        <img src="bigwindow4.jpg" alt="Big Window 4"  data-aos="flip-right">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="bigwindow3.jpg" alt="Big Window 3">
+        <img src="bigwindow3.jpg" alt="Big Window 3"  data-aos="flip-left">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="bigwindow5.jpg" alt="Big Window 5">
+        <img src="bigwindow5.jpg" alt="Big Window 5"  data-aos="flip-right">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
       <div class="gallery-item">
         <div class="catalog-card">
-        <img src="officewindow2.jpg" alt="Office Window 2">
+        <img src="officewindow2.jpg" alt="Office Window 2"  data-aos="flip-left">
         <a class="quote-btn" href="https://wa.me/27728762011">Request a Quote</a>
         </div>
       </div>
   </section>
-  <section class="form-head">
+  <section class="form-head"  data-aos="zoom-in">
     <form id="contactForm" action="https://formsubmit.co/khozam065@gmail.com" method="POST" target="_blank">
       <h2>Need a custom design?</h2>
       <h2>Leave a message &mdash; we'll get back to you.</h2>
@@ -353,13 +369,12 @@ a{
   </a>
 
   <section>
-    <div class="slideshow-wrapper">
+    <div class="slideshow-wrapper" data-aos="zoom-in">
       <div class="slideshow-container">
         <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
 
         <img class="slide" src="slidingdoor4.jpg" alt="Sliding Door 4">
         <img class="slide" src="slidingdoor2.jpg" alt="Sliding Door 2">
-        <img class="slide" src="before.jpg" alt="Before Work">
         <img class="slide" src="after.jpg" alt="After Work">
         <img class="slide" src="outdoorshelter.jpg" alt="Outdoor Shelter">
         <img class="slide" src="foldingdoor2.jpg" alt="Folding Door">
@@ -425,5 +440,12 @@ a{
     <p>Designed by <a href="https://wa.me/27694317707"><span class="designed-by">Inter-Cyber Innovations</span></p>
   </div>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 3000, // animation duration
+  });
+</script>
 </body>
 </html>
