@@ -27,7 +27,7 @@ header {
 }
 
 .logo {
-  height: 65px;
+  height: 100px;
   filter: drop-shadow(0px 0px 10px white);
   transition: transform 0.3s ease;
 }
@@ -46,7 +46,7 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 2.0em;
   color: white;
   padding: 5px 10px;
   transition: all 0.3s ease;
@@ -221,26 +221,6 @@ iframe {
   text-shadow: 0 0 5px skyblue;
 }
 
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: skyblue;
-  color: black;
-  padding: 10px 12px;
-  border-radius: 50%;
-  font-size: 24px;
-  display: none;
-  z-index: 999;
-  transition: background-color 0.3s ease;
-}
-
-.back-to-top:hover {
-  background: grey;
-  color: black;
-  transform: scale(1.2);
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -250,92 +230,6 @@ iframe {
 .follow-details i.spin {
   display: inline-block;
   animation: spin 3s linear infinite;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav ul li a {
-    font-size: 1.2em;
-    padding: 10px 0;
-    width: 100%;
-    display: block;
-  }
-
-  .title-section {
-    height: 180px;
-  }
-
-  .site-title {
-    font-size: 2em;
-  }
-
-  .contact-section {
-    padding: 30px 15px;
-  }
-
-  .contact-details,
-  .follow-details {
-    font-size: 1.2em;
-    padding: 20px;
-  }
-
-  .map-section h2 {
-    font-size: 1.5em;
-  }
-
-  .map-container {
-    max-width: 90%;
-  }
-
-  .footer {
-    padding: 20px 10px;
-  }
-
-  .footer .social-icons {
-    font-size: 1.5em;
-    gap: 15px;
-  }
-
-  .footer p {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-title {
-    font-size: 1.6em;
-  }
-
-  nav ul li a {
-    font-size: 1em;
-  }
-
-  iframe {
-    height: 300px;
-  }
-
-  .footer .social-icons {
-    font-size: 1.3em;
-  }
 }
 a {
   color: inherit;
