@@ -95,7 +95,6 @@
 
 .mv-description {
   max-width: 500px;
-  border-left: 2px solid black;
   padding-left: 20px;
 }
 
@@ -222,7 +221,7 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  font-size: 24px;
+  font-size: 50px;
   background-color: skyblue;
   color:black;
   padding: 10px 12px;
