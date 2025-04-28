@@ -228,7 +228,7 @@ nav ul li a.active{
 
 .slideshow-container {
   position: relative;
-  width: 500px;
+  width: 400px;
   height: auto;
   border: 5px solid black;
   overflow: hidden;
