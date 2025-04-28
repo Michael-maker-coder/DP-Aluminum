@@ -108,14 +108,13 @@ nav ul li a.active{
 }
 
 .about-us p {
-  font-size: 1.5em;
+  font-size: 1.0em;
   line-height: 1.8;
   font-family: 'Georgia', serif;
   color: #333;
   background-color: white;
 }
 .mission-vision-brief {
-  background: linear-gradient(to left, #d9f9ff, #ffffff);
   padding: 60px 20px;
   font-family: 'Georgia', serif;
 }
@@ -209,7 +208,7 @@ nav ul li a.active{
   list-style-type: disc;
   text-align: left;
   display: inline-block;
-  font-size: 3.0em;
+  font-size: 2.5em;
   color: #333;
   margin-bottom: 40px;
 }
