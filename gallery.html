@@ -81,7 +81,7 @@
       color:black;
     }
     form {
-      max-width: 650px;
+      max-width: 600px;
       margin: 0 auto 50px;
       background-color: #f8f8f8;
       padding: 30px;
@@ -150,6 +150,44 @@ a{
   width: 250%;
   max-width: 100%;
   height: auto;
+}
+.popup-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.popup-image.active {
+  display: flex;
+  opacity: 1;
+}
+.popup-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.popup-slideshow.active {
+  display: flex;
+  opacity: 1;
 }
   </style>
 </head>
@@ -225,12 +263,18 @@ a{
         </div>
       </div>
   </section>
+
+  <div class="popup-image" id="popupImage">
+    <span id="closePopup" style="position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer;">&times;</span>
+    <img id="popupImg" src="" alt="Popup Image" style="max-width: 90%; max-height: 80%;">
+  </div>
+
   <section class="form-head"  data-aos="zoom-in">
     <form id="contactForm" action="https://formsubmit.co/khozam065@gmail.com" method="POST" target="_blank">
       <h2>Need a custom design?</h2>
       <h2>Leave a message &mdash; we'll get back to you.</h2>
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="text" ame="contact" placeholder="Your Email/Contact Number" required>
+      <input type="text" name="contact" placeholder="Your Email/Contact Number" required>
       <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Submit</button>
     </form>
@@ -263,6 +307,11 @@ a{
     </div>
   </section>
 
+  <div class="popup-slideshow" id="popupSlideshow">
+  <span id="closeSlideshowPopup" style="position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer;">&times;</span>
+  <img id="popupSlideshowImg" src="" alt="Zoomed Slideshow Image" style="max-width: 90%; max-height: 80%;">
+  </div>
+
   <script>
     const backToTopButton = document.querySelector(".back-to-top");
 
@@ -276,30 +325,82 @@ a{
   </script>
 
   <script>
-    let slideIndex = 0;
-    let slides;
+  let slideIndex = 0;
+  let slides;
+  let slideshowInterval;
+  let isPaused = false;
 
-    function showSlides() {
-      slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
-      slides[slideIndex - 1].style.display = "block";
+  function showSlides() {
+    slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
     }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+  }
 
-    function plusSlides(n) {
-      slideIndex += n - 1;
-      if (slideIndex < 0) slideIndex = slides.length - 1;
-      showSlides();
-    }
+  function plusSlides(n) {
+    slideIndex += n - 1;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    showSlides();
+  }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      showSlides();
-      setInterval(showSlides, 5000);
+  function startSlideshow() {
+    slideshowInterval = setInterval(showSlides, 5000);
+  }
+
+  function stopSlideshow() {
+    clearInterval(slideshowInterval);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlides();
+    startSlideshow();
+
+    const slideshowImages = document.querySelectorAll(".slide");
+    const popupSlideshow = document.getElementById("popupSlideshow");
+    const popupSlideshowImg = document.getElementById("popupSlideshowImg");
+    const closeSlideshowPopup = document.getElementById("closeSlideshowPopup");
+
+    slideshowImages.forEach(img => {
+      img.addEventListener("click", () => {
+        popupSlideshowImg.src = img.src;
+        popupSlideshow.classList.add("active");
+        stopSlideshow();
+        isPaused = true;
+      });
     });
-  </script>
+
+    closeSlideshowPopup.addEventListener("click", () => {
+      popupSlideshow.classList.remove("active");
+      if (isPaused) {
+        startSlideshow();
+        isPaused = false;
+      }
+    });
+
+    popupSlideshow.addEventListener("click", (e) => {
+      if (e.target === popupSlideshow) {
+        popupSlideshow.classList.remove("active");
+        if (isPaused) {
+          startSlideshow();
+          isPaused = false;
+        }
+      }
+    });
+
+    const observer = new MutationObserver(() => {
+      if (popupSlideshow.classList.contains("active")) {
+        popupSlideshow.style.display = "flex";
+      } else {
+        popupSlideshow.style.display = "none";
+      }
+    });
+
+    observer.observe(popupSlideshow, { attributes: true });
+  });
+</script>
 
   <!-- Footer Section -->
 <footer class="footer">
@@ -320,5 +421,41 @@ a{
     duration: 3000, // animation duration
   });
 </script>
+
+<script>
+  const serviceImages = document.querySelectorAll(".gallery-item img");
+  const popup = document.getElementById("popupImage");
+  const popupImg = document.getElementById("popupImg");
+  const closePopup = document.getElementById("closePopup");
+
+  serviceImages.forEach(img => {
+    img.addEventListener("click", () => {
+      popupImg.src = img.src;
+      popup.classList.add("active");
+    });
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.classList.remove("active");
+    setTimeout(() => popup.style.display = "none", 400);
+  });
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+      setTimeout(() => popup.style.display = "none", 400);
+    }
+  });
+
+  // Observer for active class
+  const observer = new MutationObserver(() => {
+    if (popup.classList.contains("active")) {
+      popup.style.display = "flex";
+    }
+  });
+
+  observer.observe(popup, { attributes: true });
+</script>
+
 </body>
 </html>
