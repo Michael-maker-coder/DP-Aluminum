@@ -151,7 +151,11 @@ a{
   max-width: 100%;
   height: auto;
 }
-.popup-image {
+.popup-image.active {
+  display: flex;
+  opacity: 1;
+}
+.popup-gallery {
   position: fixed;
   top: 0;
   left: 0;
@@ -166,7 +170,7 @@ a{
   transition: opacity 0.4s ease;
 }
 
-.popup-image.active {
+.popup-gallery.active {
   display: flex;
   opacity: 1;
 }
@@ -264,11 +268,6 @@ a{
       </div>
   </section>
 
-  <div class="popup-image" id="popupImage">
-    <span id="closePopup" style="position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer;">&times;</span>
-    <img id="popupImg" src="" alt="Popup Image" style="max-width: 90%; max-height: 80%;">
-  </div>
-
   <section class="form-head"  data-aos="zoom-in">
     <form id="contactForm" action="https://formsubmit.co/khozam065@gmail.com" method="POST" target="_blank">
       <h2>Need a custom design?</h2>
@@ -311,6 +310,12 @@ a{
   <span id="closeSlideshowPopup" style="position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer;">&times;</span>
   <img id="popupSlideshowImg" src="" alt="Zoomed Slideshow Image" style="max-width: 90%; max-height: 80%;">
   </div>
+
+  <div class="popup-gallery" id="popupGallery">
+  <span id="closeGalleryPopup" style="position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer;">&times;</span>
+  <img id="popupGalleryImg" src="" alt="Zoomed Gallery Image" style="max-width: 90%; max-height: 80%;">
+  </div>
+
 
   <script>
     const backToTopButton = document.querySelector(".back-to-top");
@@ -402,6 +407,41 @@ a{
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryImages = document.querySelectorAll(".gallery-item img");
+    const popupGallery = document.getElementById("popupGallery");
+    const popupGalleryImg = document.getElementById("popupGalleryImg");
+    const closeGalleryPopup = document.getElementById("closeGalleryPopup");
+
+    galleryImages.forEach(img => {
+      img.addEventListener("click", () => {
+        popupGalleryImg.src = img.src;
+        popupGallery.classList.add("active");
+      });
+    });
+
+    closeGalleryPopup.addEventListener("click", () => {
+      popupGallery.classList.remove("active");
+    });
+
+    popupGallery.addEventListener("click", (e) => {
+      if (e.target === popupGallery) {
+        popupGallery.classList.remove("active");
+      }
+    });
+
+    const observer = new MutationObserver(() => {
+      if (popupGallery.classList.contains("active")) {
+        popupGallery.style.display = "flex";
+      } else {
+        popupGallery.style.display = "none";
+      }
+    });
+
+    observer.observe(popupGallery, { attributes: true });
+  });
+</script>
   <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-content">
@@ -421,41 +461,5 @@ a{
     duration: 3000, // animation duration
   });
 </script>
-
-<script>
-  const serviceImages = document.querySelectorAll(".gallery-item img");
-  const popup = document.getElementById("popupImage");
-  const popupImg = document.getElementById("popupImg");
-  const closePopup = document.getElementById("closePopup");
-
-  serviceImages.forEach(img => {
-    img.addEventListener("click", () => {
-      popupImg.src = img.src;
-      popup.classList.add("active");
-    });
-  });
-
-  closePopup.addEventListener("click", () => {
-    popup.classList.remove("active");
-    setTimeout(() => popup.style.display = "none", 400);
-  });
-
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) {
-      popup.classList.remove("active");
-      setTimeout(() => popup.style.display = "none", 400);
-    }
-  });
-
-  // Observer for active class
-  const observer = new MutationObserver(() => {
-    if (popup.classList.contains("active")) {
-      popup.style.display = "flex";
-    }
-  });
-
-  observer.observe(popup, { attributes: true });
-</script>
-
 </body>
 </html>
