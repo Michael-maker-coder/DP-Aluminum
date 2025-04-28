@@ -57,6 +57,45 @@ a{
   color: white;
   cursor: pointer;
 }
+/* Responsive adjustments but keep side-by-side */
+@media (max-width: 768px) {
+  .mv-container {
+    flex-wrap: nowrap; /* prevent stacking */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .mv-image img {
+    width: 150px; /* shrink image but keep it side-by-side */
+    height: auto;
+  }
+
+  .mv-description {
+    max-width: 200px; /* shrink text block */
+    padding-left: 10px;
+    border-left: 2px solid black;
+    padding-top: 0;
+  }
+
+  .mv-description h2 {
+    font-size: 1.2em; /* smaller heading */
+  }
+
+  .mv-description p {
+    font-size: 1em; /* smaller paragraph */
+  }
+  .about-us, .why-choose-us {
+    padding: 30px 20px;
+  }
+
+  .about-us p{
+    font-size: 1.2em;
+  }
+
+  .about-us h2{
+    font-size: 2em;
+  }
+}
   </style>
 </head>
 <body id="top">
