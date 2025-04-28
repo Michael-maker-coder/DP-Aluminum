@@ -29,6 +29,34 @@ a{
   color:inherit;
   text-decoration:none;
 }
+.popup-house {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.popup-house.active {
+  display: flex;
+  opacity: 1;
+}
+
+.close-house {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
   </style>
 </head>
 <body id="top">
@@ -128,5 +156,33 @@ a{
     once: true,     // whether animation should happen only once
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const clickableHouseImage = document.querySelector(".clickable-image");
+    const popupHouse = document.getElementById("popupHouse");
+    const popupHouseImg = document.getElementById("popupHouseImg");
+    const closeHousePopup = document.getElementById("closeHousePopup");
+
+    clickableHouseImage.addEventListener("click", () => {
+      popupHouse.classList.add("active");
+    });
+
+    closeHousePopup.addEventListener("click", () => {
+      popupHouse.classList.remove("active");
+    });
+
+    popupHouse.addEventListener("click", (e) => {
+      if (e.target === popupHouse) {
+        popupHouse.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+<div id="popupHouse" class="popup-house">
+  <span id="closeHousePopup" class="close-house">&times;</span>
+  <img id="popupHouseImg" src="houseservice.jpg" alt="Zoomed House Service" style="max-width: 90%; max-height: 90%;">
+</div>
 </body>
 </html>
