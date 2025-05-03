@@ -241,13 +241,30 @@ nav ul li a.active{
   height: auto;
 }
 
-.prev, .next {
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   padding: 15px;
   margin-top: -22px;
+  margin-right: 200px;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  transition: 0.3s;
+  user-select: none;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+}
+.prev {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 15px;
+  margin-top: -22px;
+  margin-left: 200px;
   color: white;
   font-weight: bold;
   font-size: 2.5em;
