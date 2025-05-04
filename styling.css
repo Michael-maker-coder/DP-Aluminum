@@ -1,3 +1,12 @@
+/* Increase button size on mobile only */
+@media (max-width: 768px) {
+  .back-to-top {
+    padding: 16px 20px;
+    font-size: 80px;
+    bottom: 25px;
+    right: 25px;
+  }
+}
 /* Hide hamburger on desktop */
 .hamburger {
   display: none;
@@ -284,22 +293,7 @@ nav ul li a.active{
   height: auto;
 }
 
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 15px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 2.5em;
-  transition: 0.3s;
-  user-select: none;
-  background-color: rgba(0,0,0,0.4);
-  border-radius: 5px;
-}
-.prev {
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
