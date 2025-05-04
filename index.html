@@ -104,6 +104,10 @@ a{
     <div class="logo-container">
       <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
     </div>
+    <!-- Add this inside your <header>, after .logo-container but before <nav> -->
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
     <!-- Right: Navigation -->
     <nav>
       <ul>
@@ -175,6 +179,17 @@ a{
   <p>Designed by <a href="https://wa.me/27694317707" target="_blank"><span class="designed-by">Inter-Cyber Innovations</span></a></p>
 </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.querySelector("nav ul");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  });
+</script>
 
 <script>
   const backToTopButton = document.querySelector(".back-to-top");
