@@ -1,29 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="msvalidate.01" content="F937F68445100D6D411C3231CDCC4852"/>
+  <meta name="description" content="Visit DP Aluminum Service (PTY) LTD for top-quality aluminium doors, windows, gates, and custom designs.">
+  <title>DP Aluminum-Home</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styling.css">
+  <link rel="icon" type="image/jpg" href="logo.jpg">
+  <link rel="preload" href="logo.jpg" as="image">
+  <link rel="preload" href="officewindow2.jpg" as="image">
+  <link rel="preload" href="houseservice.jpg" as="image">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DP Aluminium Service (PTY) LTD",
+  "url": "https://dpaluminiumservice.co.za",
+  "logo": "https://dpaluminiumservice.co.za/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100063883607635",
+    "https://wa.me/27728762011"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ZA"
+  }
+}
+</script>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      text-align: center;
-      padding-top: 100px;
-      color: #333;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #d9f9ff, #ffffff);
     }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 20px;
-    }
+
+html {
+  scroll-behavior: smooth;
+}
+a{
+  color:inherit;
+  text-decoration:none;
+}
+.popup-house {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.popup-house.active {
+  display: flex;
+  opacity: 1;
+}
+
+.close-house {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+/* Responsive adjustments but keep side-by-side */
+@media (max-width: 768px) {
+  .mv-container {
+    flex-wrap: nowrap; /* prevent stacking */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .mv-image img {
+    width: 150px; /* shrink image but keep it side-by-side */
+    height: auto;
+  }
+
+  .mv-description {
+    max-width: 200px; /* shrink text block */
+    padding-left: 10px;
+    border-left: 2px solid black;
+    padding-top: 0;
+  }
+
+  .mv-description h2 {
+    font-size: 1.2em; /* smaller heading */
+  }
+
+  .mv-description p {
+    font-size: 1em; /* smaller paragraph */
+  }
+  .about-us, .why-choose-us {
+    padding: 30px 20px;
+  }
+
+  .about-us p{
+    font-size: 1.2em;
+  }
+
+  .about-us h2, {
+    font-size: 2em;
+  }
+}
   </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YZP1E1TNF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2YZP1E1TNF');
+</script>
 </head>
-<body>
-  <h1>🚧 Website Under Construction 🚧</h1>
-  <p>This site is currently unavailable.<br>
-  Please contact the owner for more information.</p>
+<body id="top">
+  <header>
+    <!-- Left: Logo -->
+    <div class="logo-container">
+      <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
+    </div>
+    <!-- Add this inside your <header>, after .logo-container but before <nav> -->
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+    <!-- Right: Navigation -->
+    <nav>
+      <ul>
+        <li> <a href="index.html" class="active">HOME</a></li>
+        <li> <a href="gallery.html">GALLERY</a></li>
+        <li> <a href="services.html">SERVICES</a></li>
+        <li> <a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="title-section">
+    <section class="homepage">
+    <h1 class="site-title">DP ALUMINIUM SERVICE (PTY) LTD</h1>
+  </section>
+  </section>
+
+<section class="about-us" data-aos="fade-up">
+  <h2>About Us</h2>
+  <p>
+    At DP Aluminium Service(PTY)LTD, we take pride in delivering top-tier aluminium solutions that combine strength, elegance, and durability.
+    With years of hands-on experience, our team is committed to excellence in every product — from sliding doors and custom windows to gates and garage solutions.
+    We work closely with our clients to turn their ideas into lasting aluminium designs that enhance homes, businesses, and lifestyles.
+    Quality is not just our promise — it's our standard.
+  </p>
+  <hr>
+</section>
+<section class="mission-vision-brief" data-aos="fade-right">
+  <div class="mv-container">
+    <!-- Image on the left -->
+    <div class="mv-image">
+      <img src="houseservice.jpg" alt="Aluminum House Service" class="clickable-image">
+    </div>
+    <!-- Mission & Vision Text on the right -->
+    <div class="mv-description">
+      <h2>Our Mission & Vision</h2>
+      <p>
+        We are committed to transforming homes and businesses with durable, stylish, and innovative aluminium solutions.
+        Our passion is to deliver unmatched quality and customer satisfaction—because your space deserves excellence.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Back to Top Chevron Arrow -->
+<a href="#" class="back-to-top" title="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<section class="why-choose-us" data-aos="fade-left">
+  <h2>Why Choose Us</h2>
+  <ul>
+    <li>Affordable pricing</li>
+    <li>Quality material</li>
+    <li>Transport availability</li>
+    <li>5+ years experience</li>
+    <li>We service anywhere in South Africa</li>
+  </ul>
+
+</section>
+<!-- Footer Section -->
+<footer class="footer">
+<div class="footer-content">
+  <div class="social-icons">
+    <a href="https://wa.me/27728762011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.tiktok.com/@dp_aluminum23" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100063883607635" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+  <p>&copy; 2025 DP ALUMINIUM SERVICE (PTY) LTD | All Rights Reserved.</p>
+  <p>Designed by <a href="https://wa.me/27694317707" target="_blank"><span class="designed-by">Inter-Cyber Innovations</span></a></p>
+</div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.querySelector("nav ul");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  });
+</script>
+
+<script>
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+</script>
+<!-- AOS Animation Library JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 3000, // animation duration in ms
+    once: true,     // whether animation should happen only once
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const clickableHouseImage = document.querySelector(".clickable-image");
+    const popupHouse = document.getElementById("popupHouse");
+    const popupHouseImg = document.getElementById("popupHouseImg");
+    const closeHousePopup = document.getElementById("closeHousePopup");
+
+    clickableHouseImage.addEventListener("click", () => {
+      popupHouse.classList.add("active");
+    });
+
+    closeHousePopup.addEventListener("click", () => {
+      popupHouse.classList.remove("active");
+    });
+
+    popupHouse.addEventListener("click", (e) => {
+      if (e.target === popupHouse) {
+        popupHouse.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+<div id="popupHouse" class="popup-house">
+  <span id="closeHousePopup" class="close-house">&times;</span>
+  <img id="popupHouseImg" src="houseservice.jpg" alt="Zoomed House Service" style="max-width: 90%; max-height: 90%;">
+</div>
 </body>
 </html>
