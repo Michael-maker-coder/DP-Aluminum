@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="msvalidate.01" content="F937F68445100D6D411C3231CDCC4852"/>
-  <meta name="description" content="Visit DP Aluminum Service (PTY) LTD for top-quality aluminium doors, windows, gates, and custom designs.">
+  <meta name="description" content="Visit DP Aluminum Service (PTY) LTD for top-quality aluminium doors, windows, gates, and custom designs.Kathorus,Katlehong,Vosloorus,Eastrand,Gauteng,South-Africa">
   <title>DP Aluminum-Home</title>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -132,11 +132,6 @@ a{
     <div class="logo-container">
       <img src="logo.jpg" alt="DP Aluminum Logo" class="logo">
     </div>
-    <!-- Add this inside your <header>, after .logo-container but before <nav> -->
-    <button class="hamburger" id="hamburger">
-      <i class="fas fa-bars"></i>
-    </button>
-    <!-- Right: Navigation -->
     <nav>
       <ul>
         <li> <a href="index.html" class="active">HOME</a></li>
@@ -184,6 +179,8 @@ a{
   <i class="fas fa-chevron-up"></i>
 </a>
 
+<!-- Add this to your index.html -->
+
 <section class="why-choose-us" data-aos="fade-left">
   <h2>Why Choose Us</h2>
   <ul>
@@ -194,6 +191,75 @@ a{
     <li>We service anywhere in South Africa</li>
   </ul>
 
+</section>
+
+<section class="testimonials" style="padding: 60px 20px; background: linear-gradient(to right, #d9f9ff, #ffffff); text-align: center;">
+  <h2 style="font-size: 2.5em; background-color: skyblue; padding: 10px; border-radius: 10px; display: inline-block;">Testimonials</h2>
+  <div class="testimonial-slider" style="position: relative; max-width: 800px; margin: 40px auto; overflow: hidden;">
+    <div class="testimonial-track" style="display: flex; transition: transform 0.5s ease;">
+      <div class="testimonial-item" style="min-width: 100%; padding: 20px;">
+        <p style="font-size: 1.5em;">"Exceptional service and quality work. Highly recommend!"</p>
+        <p style="font-weight: bold;">★★★★★ - Sarah M.</p>
+      </div>
+      <div class="testimonial-item" style="min-width: 100%; padding: 20px;">
+        <p style="font-size: 1.5em;">"Fast, professional and reliable. Will use again."</p>
+        <p style="font-weight: bold;">★★★★★ - John K.</p>
+      </div>
+      <div class="testimonial-item" style="min-width: 100%; padding: 20px;">
+        <p style="font-size: 1.5em;">"Top notch aluminium work. Very satisfied."</p>
+        <p style="font-weight: bold;">★★★★★ - Lerato D.</p>
+      </div>
+      <div class="testimonial-item" style="min-width: 100%; padding: 20px;">
+        <p style="font-size: 1.5em;">"Reliable team and beautiful results."</p>
+        <p style="font-weight: bold;">★★★★★ - Sipho N.</p>
+      </div>
+      <div class="testimonial-item" style="min-width: 100%; padding: 20px;">
+        <p style="font-size: 1.5em;">"Great experience from start to finish."</p>
+        <p style="font-weight: bold;">★★★★★ - Amanda T.</p>
+      </div>
+      <div class="testimonial-item" style="min-width: 100%; padding: 20px;">
+        <p style="font-size: 1.5em;">"DP Aluminium exceeded my expectations."</p>
+        <p style="font-weight: bold;">★★★★★ - Themba Z.</p>
+      </div>
+    </div>
+    <button id="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: navy; color: white; border: none; padding: 10px; border-radius: 50%;">&#10094;</button>
+    <button id="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: navy; color: white; border: none; padding: 10px; border-radius: 50%;">&#10095;</button>
+  </div>
+</section>
+
+<script>
+let currentIndex = 0;
+const track = document.querySelector('.testimonial-track');
+const totalItems = document.querySelectorAll('.testimonial-item').length;
+
+function showSlide(index) {
+  if(index >= totalItems) currentIndex = 0;
+  else if(index < 0) currentIndex = totalItems -1;
+  else currentIndex = index;
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+document.getElementById('next').addEventListener('click', () => showSlide(currentIndex + 1));
+document.getElementById('prev').addEventListener('click', () => showSlide(currentIndex - 1));
+</script>
+
+<!-- FAQ Section -->
+<section class="faq" style="padding: 60px 20px; background: linear-gradient(to right, #d9f9ff, #ffffff); text-align: center;">
+  <h2 style="font-size: 2.5em; background-color: skyblue; padding: 10px; border-radius: 10px; display: inline-block;">FAQ's</h2>
+  <div style="max-width: 800px; margin: 40px auto; text-align: left;">
+    <div class="faq-item" style="margin-bottom: 20px;">
+      <button style="width: 100%; background: #d9f9ff; border: none; text-align: left; padding: 15px; font-size: 1.5em; cursor: pointer;">-What services do you offer?</button>
+      <div style="display: none; padding: 10px; border-left: 3px solid navy;">We offer aluminium doors, windows, sliding doors, and custom solutions.</div>
+    </div>
+    <div class="faq-item" style="margin-bottom: 20px;">
+      <button style="width: 100%; background: #d9f9ff; border: none; text-align: left; padding: 15px; font-size: 1.5em; cursor: pointer;">-How do I request a quote?</button>
+      <div style="display: none; padding: 10px; border-left: 3px solid navy;">You can request a quote via WhatsApp or our Contact Us page.</div>
+    </div>
+    <div class="faq-item" style="margin-bottom: 20px;">
+      <button style="width: 100%; background: #d9f9ff; border: none; text-align: left; padding: 15px; font-size: 1.5em; cursor: pointer;">-Do you serve outside Gauteng?</button>
+      <div style="display: none; padding: 10px; border-left: 3px solid navy;">Yes, we serve neighboring provinces depending on the project scope.</div>
+    </div>
+  </div>
 </section>
 <!-- Footer Section -->
 <footer class="footer">
@@ -261,7 +327,14 @@ a{
     });
   });
 </script>
-
+<script>
+  document.querySelectorAll('.faq-item button').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 <div id="popupHouse" class="popup-house">
   <span id="closeHousePopup" class="close-house">&times;</span>
   <img id="popupHouseImg" src="houseservice.jpg" alt="Zoomed House Service" style="max-width: 90%; max-height: 90%;">
