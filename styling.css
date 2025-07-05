@@ -2,7 +2,7 @@
 @media (max-width: 768px) {
   .back-to-top {
     padding: 16px 20px;
-    font-size: 70px;
+    font-size: 90px;
     bottom: 25px;
     right: 25px;
   }
@@ -11,49 +11,6 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-}
-
-@media (max-width: 768x) {
-  .about-us {
-    font-size:3em;
-  }
-  nav ul {
-    flex-direction: column;
-    background: black;
-    color: white;
-    position: absolute;
-    top:70px;
-    right: 0;
-    width: 60%;
-    padding: 20px;
-    display: none;
-    box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  nav ul.active {
-    display: flex;
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.homepage {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.homepage h1 {
-  font-size: 3em;
-  color: navy;
-  background-color: white;
-}
-
-.homepage h1:hover {
-  transform: scale(1.05);
-  color: navy;
 }
 
 header {
@@ -392,5 +349,8 @@ nav ul li a.active {
   }
   .slide {
     width: 100%;
+  }
+  #prev, #next{
+    font-size:2.5em;
   }
 }
