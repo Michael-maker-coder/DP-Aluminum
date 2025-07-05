@@ -1,55 +1,42 @@
-/* Increase button size on mobile only */
+/* Responsive Back to Top Button */
 @media (max-width: 768px) {
   .back-to-top {
     padding: 16px 20px;
-    font-size: 200px;
+    font-size: 70px;
     bottom: 25px;
     right: 25px;
   }
 }
-/* Hide hamburger on desktop */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: black;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  z-index: 1001;
-}
-
-/* Mobile nav menu hidden by default */
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-/* Hide nav on mobile */
-@media (max-width: 768px) {
+@media (max-width: 768x) {
   nav ul {
     flex-direction: column;
-    background: white;
+    background: black;
+    color: white;
     position: absolute;
-    top: 70px;
+    top:70px;
     right: 0;
     width: 60%;
     padding: 20px;
     display: none;
     box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
   nav ul.active {
     display: flex;
-  }
-
-  .hamburger {
-    display: block;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
+
 .homepage {
   text-align: center;
   padding: 60px 20px;
@@ -65,6 +52,7 @@ nav ul {
   transform: scale(1.05);
   color: navy;
 }
+
 header {
   background-color: #000;
   color: white;
@@ -82,13 +70,14 @@ header {
   filter: drop-shadow(0px 0px 10px white);
 }
 
+@media (max-width: 768px) {
+  .logo {
+    height: 70px;
+  }
+}
+
 .logo:hover {
   transform: scale(1.05);
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
 }
 
 nav ul li {
@@ -98,28 +87,31 @@ nav ul li {
   color: white;
 }
 
-nav ul li a:hover{
-  transform: scale(1.1);
-  background-color:white;
-  color:black;
-}
-nav ul li a{
-  text-decoration:none;
-  color:white;
+nav ul li a {
+  text-decoration: none;
+  color: white;
   transition: all 0.3s ease;
   padding: 5px 10px;
   display: inline-block;
 }
-nav ul li a.active{
-  background-color:white;
-  color:black;
+
+nav ul li a:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
 }
+
+nav ul li a.active {
+  background-color: white;
+  color: black;
+}
+
 .title-section {
-  background-image: url('officewindow2.jpg'); /* Replace with your image file */
+  background-image: url('officewindow2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 250px; /* Adjust height as needed */
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,12 +125,11 @@ nav ul li a.active{
   background-color: white;
   padding: 10px;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .site-title:hover {
   transform: scale(1.05);
-  color: navy;
-  transition:all 0.3s ease;
 }
 
 .about-us {
@@ -155,9 +146,11 @@ nav ul li a.active{
   font-family: 'Georgia', serif;
   background-color: skyblue;
   text-decoration: underline;
+  display: inline-block;
 }
+
 .about-us h2:hover {
-  text-shadow: grey;
+  text-shadow: 2px 2px 5px grey;
 }
 
 .about-us p {
@@ -167,6 +160,7 @@ nav ul li a.active{
   color: #333;
   background-color: white;
 }
+
 .mission-vision-brief {
   padding: 60px 20px;
   font-family: 'Georgia', serif;
@@ -183,7 +177,6 @@ nav ul li a.active{
 
 .mv-image img {
   width: 500px;
-  height: auto;
   border: 2px solid red;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -204,14 +197,16 @@ nav ul li a.active{
   text-decoration: underline;
   font-size: 2.5em;
   margin-bottom: 15px;
+  background-color: skyblue;
+  display: inline-block;
 }
 
 .mv-description p {
   font-size: 1.5em;
   line-height: 1.6;
   color: #000;
-  justify-content: center;
 }
+
 .catalog-card {
   background-color: grey;
   padding: 15px;
@@ -240,6 +235,7 @@ nav ul li a.active{
   font-weight: bold;
   transition: 0.3s;
 }
+
 .why-choose-us {
   text-align: center;
   padding: 50px 30px;
@@ -251,6 +247,7 @@ nav ul li a.active{
   font-size: 2.5em;
   text-decoration: underline;
   background-color: skyblue;
+  display: inline-block;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -281,16 +278,14 @@ nav ul li a.active{
 .slideshow-container {
   position: relative;
   width: 400px;
-  height: auto;
-  border: 5px solid black;
   overflow: hidden;
+  border: 5px solid black;
   border-radius: 10px;
 }
 
 .slide {
   display: none;
-  width: 150%;
-  height: auto;
+  width: 100%;
 }
 
 .prev, .next {
@@ -303,10 +298,10 @@ nav ul li a.active{
   color: white;
   font-weight: bold;
   font-size: 2.5em;
-  transition: 0.3s;
-  user-select: none;
   background-color: rgba(0,0,0,0.4);
   border-radius: 5px;
+  user-select: none;
+  transition: 0.3s;
 }
 
 .prev {
@@ -320,13 +315,14 @@ nav ul li a.active{
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
 .back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   font-size: 50px;
   background-color: skyblue;
-  color:black;
+  color: black;
   padding: 10px 12px;
   border-radius: 50%;
   text-align: center;
@@ -338,48 +334,60 @@ nav ul li a.active{
 .back-to-top:hover {
   background-color: grey;
 }
+
 .footer {
-background-color: black;
-color: white;
-padding: 30px 20px;
-text-align: center;
-font-family: 'Georgia', serif;
-margin-top: 40px;
+  background-color: black;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  margin-top: 40px;
 }
+
 .footer .social-icons {
-display: flex;
-justify-content: center;
-gap: 20px;
-font-size: 3.0em;
-margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 3.0em;
+  margin-bottom: 15px;
 }
 
 .footer .social-icons i {
-cursor: pointer;
-transition: all 0.3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .footer .social-icons i:hover {
-filter: drop-shadow(0 0 5px white);
-transform: scale(1.5);
+  filter: drop-shadow(0 0 5px white);
+  transform: scale(1.5);
 }
 
 .footer p {
-margin: 5px 0;
-font-size: 1.5em;
+  margin: 5px 0;
+  font-size: 1.5em;
 }
 
 .footer .designed-by {
-font-weight: bold;
-color: skyblue;
-cursor: pointer;
-transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-weight: bold;
+  color: skyblue;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-.footer a{
+
+.footer a {
   text-decoration: none;
 }
 
 .footer .designed-by:hover {
-text-shadow: 0 0 5px skyblue;
-color: white;
+  text-shadow: 0 0 5px skyblue;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    width: 100%;
+  }
+  .slide {
+    width: 100%;
+  }
 }
