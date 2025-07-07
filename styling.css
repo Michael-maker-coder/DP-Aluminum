@@ -197,7 +197,7 @@ nav ul li a.active {
 }
 
 .why-choose-us {
-  text-align: center;
+  text-align:left-align;
   padding: 50px 30px;
   max-width: 900px;
   margin: 0 auto;
